@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="simpleStyles.css">
+</head>
+
+<body>
+    <!--
+        Måte å jobbe på 
+          HTML
+          Lage HTML med JavaScript-funksjon
+          Mer generelle funksjoner 
+            - funksjoner uten parametre
+            - funksjoner med parametre
+        DRY-prinsippet (Don't repeat yourself)        
+        Implementering <-> Refactoring 
+    -->
+    <div id="board">
+    </div>
+
+    <script>
+        drawBoard();
+
+        function drawBoard() {
+            drawDoubleRow();
+            drawDoubleRow();
+            drawDoubleRow();
+            drawDoubleRow();
+        }
+
+        function drawDoubleRow() {
+            drawRow('light', 'dark');
+            drawRow('dark', 'light');
+        }
+
+        function drawRow(color1, color2) {
+            document.getElementById('board').innerHTML += /*HTML*/`    
+                <div class="${color1}Square"></div>
+                <div class="${color2}Square"></div>
+                <div class="${color1}Square"></div>
+                <div class="${color2}Square"></div>
+                <div class="${color1}Square"></div>
+                <div class="${color2}Square"></div>
+                <div class="${color1}Square"></div>
+                <div class="${color2}Square"></div>
+                `;
+        }
+
+    </script>
+</body>
+
+</html>
